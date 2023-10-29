@@ -2,8 +2,7 @@
 
 This repository explores methods to extract information from the [Knowledge Project ](https://tu-plogan.github.io/source/r_releases.html).
 
-Note that, the methods we developed so far only utilised the txt files. In eb07/TXT_V2/v21/ folder, many txt files are missing, 
-while they provide xml files for those missing ones instead. This might indicate the version 2 is not fully ready yet. Thus, information extracted using our method is not complete either. 
+Note that, the methods we developed so far only utilised the txt files. For example, in eb07/TXT_V2/v21/ folder, there are many xml files, we won't process them, but just txt files in that folder.
 
 ---
 
