@@ -1,0 +1,5 @@
+pandas
+lxml==4.9.2
+pyspark
+nltk
+spacy
