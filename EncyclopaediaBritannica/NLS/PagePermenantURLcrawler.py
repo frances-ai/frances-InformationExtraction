@@ -35,7 +35,7 @@ def fetch_page_permanent_url(url):
                     print("Value:", option_value)
                     print("Page number:", number)
                     print()  # Print an empty line for better readability
-                    page_url_list[number] = option_value
+                    page_url_list[number] = "https://digital.nls.uk/" + option_value
                 else:
                     print("No number inside the first parenthesis found for option:", option_text)
         else:

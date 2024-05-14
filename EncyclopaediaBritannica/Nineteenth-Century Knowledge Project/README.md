@@ -52,6 +52,5 @@ We evaluated this extraction method by comparing it with [Alex's Work](https://g
 The result shows that:
 * Overall, our method can extract **more information**, such as alternative names, reference terms, note
 * Information extracted using our method is **more accurate**, such as term name (supporting more patterns), term description, the page number where a term starts or ends, position, term type
-* we had **less text files to process** (due to incomplete work of version 2) than Alex's work, while we **extracted 850 more terms**. However, it does not imply our method generally extracts more terms, since version 2 separates more terms for us. More experiments are required to confirm this.
 * Classifying term type only by the number of words (Alex's work) is rather inaccurate, we spot that almost half of _Topic_ extracted using Alex's method are actually _Article_, and the number of _Topic_ extracted using our method is nearly half of his.
 * There are some terms cannot be extracted or wrongly extracted because of the quality of the txt file itself. 

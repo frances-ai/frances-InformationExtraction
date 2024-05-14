@@ -2,4 +2,11 @@ pandas
 lxml==4.9.2
 pyspark
 nltk
-spacy
+spacy==3.2.6
+tqdm
+Jupyter
+typing-inspect==0.8.0
+typing_extensions==4.5.0
+requests
+beautifulsoup4
+jiwer
