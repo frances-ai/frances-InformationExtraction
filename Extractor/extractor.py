@@ -72,7 +72,7 @@ def extra_see_references(text:str) -> list[str]:
         if post_indicator_text[-1] == '.':
             post_indicator_text = post_indicator_text[:-1]
         pre_and, sep, post_and = post_indicator_text.partition(" and ")
-        print(post_indicator_text)
+        #print(post_indicator_text)
         if sep:
             references.append(pre_and.strip())
             references.append(post_and.strip())
