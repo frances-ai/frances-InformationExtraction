@@ -60,8 +60,23 @@ def extract_names(head: str) -> tuple[str, list[str]]:
 
 def extra_see_references(text:str) -> list[str]:
     """
-    This function extracts see references after the word "See". If there are same reference name occurs multiple times, this function will only return one.
+    This function extracts see references after the word "See" at the end of the text. If there are same reference name occurs multiple times, this function will only return one.
     :param text: text to extract references from.
     :return: a list of reference names
     """
-    pass
+    references = []
+    indicator_match = regex.search(r"(See|Vide)\s+((\(?\p{Lu}[\p{Lu\p{L}\-\'\.\)]+\s*)+(and\s+(\(?\p{Lu}[\p{Lu\p{L}\-\'\.\)]+\s*)+)?)$", text)
+
+    if indicator_match:
+        post_indicator_text = indicator_match.group(2).strip()
+        if post_indicator_text[-1] == '.':
+            post_indicator_text = post_indicator_text[:-1]
+        pre_and, sep, post_and = post_indicator_text.partition(" and ")
+        print(post_indicator_text)
+        if sep:
+            references.append(pre_and.strip())
+            references.append(post_and.strip())
+        else:
+            references.append(post_indicator_text.strip())
+
+    return references
