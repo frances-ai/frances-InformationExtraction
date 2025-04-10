@@ -58,7 +58,7 @@ def extract_names(head: str) -> tuple[str, list[str]]:
     return primary_name, alternative_names
 
 
-def extra_see_references(text:str) -> list[str]:
+def extract_see_references(text:str) -> list[str]:
     """
     This function extracts see references after the word "See" at the end of the text. If there are same reference name occurs multiple times, this function will only return one.
     :param text: text to extract references from.
