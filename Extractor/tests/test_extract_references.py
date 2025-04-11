@@ -1,5 +1,5 @@
 import unittest
-from Extractor.extractor import extra_see_references
+from Extractor.extractor import extract_see_references
 
 
 class TestExtractReferences(unittest.TestCase):
@@ -13,7 +13,7 @@ class TestExtractReferences(unittest.TestCase):
             ["Berwick (North)"]
         ]
         for text, expected in zip(texts, expected):
-            self.assertEqual(expected, extra_see_references(text))
+            self.assertEqual(expected, extract_see_references(text))
 
     def test_text_multiple_refs(self):
         texts = ["LOGIE WESTER. Vide URQUHART and LOGIE WESTER.", "Papastour, and Fowla. See WALLS and SANDNESS."]
@@ -22,4 +22,4 @@ class TestExtractReferences(unittest.TestCase):
             ["WALLS", "SANDNESS"],
         ]
         for text, expected in zip(texts, expected):
-            self.assertEqual(expected, extra_see_references(text))
+            self.assertEqual(expected, extract_see_references(text))
