@@ -1,0 +1,5 @@
+stanza
+SPARQLWrapper
+pandas
+spacy
+flair
