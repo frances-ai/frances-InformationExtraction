@@ -3,15 +3,23 @@ from defoe import get_root_path
 from tqdm import tqdm
 import pandas as pd
 import string
+import regex
+
 defoe_path = get_root_path() + "/"
 gazetteer = "geonames"
 bounding_box = ""
+
+def normalize_name(name):
+    name = regex.sub(r'[^\p{L}\s\-\'\,\.\’]', '', name)
+    name = regex.sub(r'\n', '', name)
+    name = string.capwords(name)
+    return name
 
 def construct_places_xml(tagged_tokens):
     xml_doc = '<placenames> '
     for index, token in enumerate(tagged_tokens):
         id = index + 1
-        toponym = string.capwords(token['name'])
+        toponym = normalize_name(token['name'])
         start_index = token['start']
         end_index = token['end']
         child = f'<placename id="{str(id)}" start="{start_index}" end="{end_index}" name="{toponym}"/> '
@@ -26,7 +34,7 @@ def geo_resolve(geotagged_xml, defoe_path, gazetteer, bounding_box):
 
 def geoparse(target_article):
     # add name back to the text
-    article_name = string.capwords(target_article["name"])
+    article_name = normalize_name(target_article["name"])
     tagged_tokens = []
     if target_article["is_location"]:
         tagged_tokens.append({
