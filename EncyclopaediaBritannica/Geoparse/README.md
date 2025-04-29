@@ -38,6 +38,11 @@ An annotated dataset (`eb_geo_samples_annotated.json`) is also included for eval
 - Compares detected location mentions against the manually annotated sample set (`eb_geo_samples_annotated.json`).
 - Provides performance metrics like Precision, Recall, and F1-score.
 
+### 6. `get_countries_geo.py`
+- 🌍 Extract countries geo information from [Geonames source data](https://download.geonames.org/export/dump/), such as 
+ISO code, name, latitude, longitude, boundary.
+
+
 ---
 
 ## 🛠️ Requirements
