@@ -50,8 +50,12 @@ if __name__ == "__main__":
             location["start"] -= forward_len
             location["end"] -= forward_len
 
-        # remove the first location with negative index
-        if len(location_tokens) > 0 and location_tokens[0]['start'] < 0:
+        # remove the all locations with negative index
+        negative_locations_count = 0
+        for location_token in location_tokens:
+            if location_tokens[0]['start'] < 0:
+                negative_locations_count += 1
+        for _ in range(negative_locations_count):
             location_tokens.pop(0)
 
         article["locations"] = location_tokens
