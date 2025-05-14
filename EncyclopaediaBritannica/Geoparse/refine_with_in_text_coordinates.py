@@ -86,9 +86,15 @@ def extract_coordinates(text: str) -> Union[tuple[float, float], None]:
 
     return None
 
+def is_location(article):
+    if "coordinates" in article and article["coordinates"] and pd.notna(article["coordinates"]):
+        return True
+    return article["is_location"]
+
 
 if __name__ == "__main__":
     # load input dataframe
     eb_df = pd.read_json('eb1_1771_geotagged_articles_stanza_df.json', orient='records', lines=True)
     eb_df['coordinates'] = eb_df['hq_text'].apply(extract_coordinates)
+    eb_df['is_location'] = eb_df.apply(is_location, axis=1)
     eb_df.to_json('eb1_1771_refined_geotagged_articles_stanza_df.json', orient='records', lines=True)

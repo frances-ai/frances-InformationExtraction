@@ -70,7 +70,7 @@ def main():
     """
     root_module = "defoe"
     setup_module = "setup"
-    models = ["books", "papers", "fmp", "nzpp", "generic_xml", "nls", "nlsv2", "nlsArticles", "hdfs", "psql", "es", "sparql"]
+    models = ["books", "papers", "fmp", "nzpp", "generic_xml", "nls", "nlsArticles", "hdfs", "psql", "es", "sparql"]
 
     parser = ArgumentParser(description="Run Spark text analysis job")
     parser.add_argument("data_file",

@@ -1,9 +1,16 @@
+import regex
 from tqdm import tqdm
 import pandas as pd
 import string
 import stanza
 stanza.download('en') # download English model
 nlp = stanza.Pipeline('en') # initialize English neural pipeline
+
+def normalize_name(name):
+    name = regex.sub(r'[^\p{L}\s\-\'\,\.\’]', '', name)
+    name = regex.sub(r'\n', '', name)
+    name = string.capwords(name)
+    return name
 
 def geo_tagging(text):
     doc = nlp(text)
@@ -34,7 +41,7 @@ if __name__ == "__main__":
     print("Geotagging articles....")
     for index, article in enumerate(tqdm(sample_articles)):
         # add name back to the text
-        article_name = string.capwords(article["name"])
+        article_name = normalize_name(article["name"])
         text_with_article_name = article_name + ", " + article["hq_text"]
         # geotagging
         location_tokens = geo_tagging(text_with_article_name)

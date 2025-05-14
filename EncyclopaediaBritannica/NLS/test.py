@@ -145,6 +145,7 @@ if __name__ == "__main__":
     print(document1.code)
     #print(page1.words)
     print(page1.page_id)
+    print(page1.page_strings)
     #print(page1.header_left_words)
     #print(page1.header_right_words)
     #print(page1.content)
@@ -158,4 +159,4 @@ if __name__ == "__main__":
         #print(page_clean_term_dict[term])
 
     print("-----")
-    page_to_paragraphs(page_hpos_vpos_font)
+    #page_to_paragraphs(page_hpos_vpos_font)

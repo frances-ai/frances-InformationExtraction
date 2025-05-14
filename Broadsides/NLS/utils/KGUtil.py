@@ -18,6 +18,6 @@ def create_nls_folder_path_mapping_file(result_filename, nls_data_folder_path):
 
 if __name__ == '__main__':
     parent_path = Path(os.path.abspath(os.path.dirname(__file__))).parent.absolute()
-    chapbook_data_mapping_file_path = str(parent_path) + '/chapbook.txt'
-    chapbook_data_file_path = '/Users/lilinyu/Downloads/nls-data-chapbooks'
-    create_nls_folder_path_mapping_file(chapbook_data_mapping_file_path, chapbook_data_file_path)
+    broadsides_data_mapping_file_path = str(parent_path) + '/broadsides.txt'
+    broadsides_data_file_path = '/Users/lilinyu/Downloads/nls-data-broadsides'
+    create_nls_folder_path_mapping_file(broadsides_data_mapping_file_path, broadsides_data_file_path)
